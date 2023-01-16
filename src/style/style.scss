@@ -1,0 +1,155 @@
+@import "nullstyle.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+
+%flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%flexStart {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+$orange: rgb(185, 77, 27);
+$calcBodyColor: #282a31;
+
+body {
+  @extend %flexCenter;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Quicksand;
+}
+
+.calcBody {
+  width: 700px;
+  height: 620px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.calc-body__item {
+  width: 100%;
+}
+
+.calcBody-display {
+  height: 150px;
+  padding: 15px;
+  text-align: right;
+  display: flex;
+  border-radius: 20px 20px 0 0;
+  .themeSwitch {
+    flex-basis: 30px;
+    position: relative;
+    .themeSwitch-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      font-weight: 700;
+      color: $orange;
+    }
+  }
+  .display-window {
+    flex-basis: 100%;    
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: end;
+    .display {
+      width: 100%;
+      height: 70%;
+      background-color: inherit;
+      text-align: right;
+      font-size: 55px;
+      color: inherit;
+      padding-bottom: 12px;      
+    }
+    .displaySecond{
+      width: 100%;
+      height:30% ;
+      background-color: inherit;
+      text-align: right;
+      color: inherit;
+      font-size: 20px;
+    }
+  }
+}
+.calcBody-memHistory {
+  height: 60px;
+  display: flex;
+  color: $orange;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px;
+  .memory-side {
+    padding: 10px 10px 10px 25px;
+    flex-basis: 100%;
+    @extend %flexStart;
+    .mem-value {     
+      overflow: hidden;
+      color:rgb(120, 231, 16); ;
+    }
+  }
+  .history-side {
+    padding: 10px;
+    flex-basis: 350px;
+    @extend %flexStart;
+    .history-value {
+      max-width: 180px;
+      overflow: hidden;
+    }
+  }
+}
+.calcBody-btnField {
+  @extend %flexCenter;
+  padding: 20px;
+  .cell {
+    outline: none;   
+    width: 75px;
+    height: 75px;
+    text-align: center;
+    line-height: 80px;
+    color: rgb(140, 155, 145);
+    font-size: 25px;
+    font-weight: 600;
+    background-color: inherit;
+    &:hover {
+      color: rgb(123, 255, 0);           
+    }
+  }
+  .m__color {
+    color: $orange;
+    font-weight: 700;
+  }
+  .number {
+    font-size: 40px;
+    font-weight: 500;
+    color: inherit;
+  }
+  .back {
+    color: $orange;    
+  }
+  .sign,
+  .equal {
+    font-size: 40px;
+    color: rgb(255, 230, 0);
+    @extend %flexCenter;
+  }
+  .equal {
+    border-radius: 50%;
+    background-color: rgb(73, 45, 28);
+    &:hover {
+      color: rgb(255, 255, 255);
+    }
+  }
+  .del {
+    color: $orange;
+    font-weight: 500;
+    font-size: 35px;
+  } 
+}
