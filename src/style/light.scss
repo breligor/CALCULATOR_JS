@@ -1,0 +1,30 @@
+body.dark {
+  background-color: rgb(238, 235, 231);
+  color: rgb(8, 0, 0);
+  .calcBody {
+    box-shadow: 0 4px 8px 0 rgba(88, 88, 88, 0.5);
+    background-color: #f3f3f3;
+    .calcBody-display {
+      background-color: #ebeae9;
+    }
+    .calcBody-btnField {
+      .sign {
+        color: rgb(0, 0, 0);
+        &:hover {
+          color: rgb(123, 255, 0);
+        }
+      }
+      .equal {
+        background-color: rgb(241, 220, 200);
+        color: rgb(0, 0, 0);
+        &:hover {
+          color: rgb(123, 255, 0);
+        }
+      }
+    }
+    .themeSwitch-btn {
+      color: white;
+      background-color: rgb(44, 25, 4);
+    }
+  }
+}

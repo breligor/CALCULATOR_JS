@@ -1,0 +1,148 @@
+@import "nullstyle.css";
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+.calcBody-btnField .sign,
+.calcBody-btnField .equal, .calcBody-btnField, body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calcBody-memHistory .history-side, .calcBody-memHistory .memory-side {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  font-family: Quicksand;
+}
+
+.calcBody {
+  width: 700px;
+  height: 620px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.calc-body__item {
+  width: 100%;
+}
+
+.calcBody-display {
+  height: 150px;
+  padding: 15px;
+  text-align: right;
+  display: flex;
+  border-radius: 20px 20px 0 0;
+}
+.calcBody-display .themeSwitch {
+  flex-basis: 30px;
+  position: relative;
+}
+.calcBody-display .themeSwitch .themeSwitch-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: 700;
+  color: rgb(185, 77, 27);
+}
+.calcBody-display .display-window {
+  flex-basis: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: end;
+}
+.calcBody-display .display-window .display {
+  width: 100%;
+  height: 70%;
+  background-color: inherit;
+  text-align: right;
+  font-size: 55px;
+  color: inherit;
+  padding-bottom: 12px;
+}
+.calcBody-display .display-window .displaySecond {
+  width: 100%;
+  height: 30%;
+  background-color: inherit;
+  text-align: right;
+  color: inherit;
+  font-size: 20px;
+}
+
+.calcBody-memHistory {
+  height: 60px;
+  display: flex;
+  color: rgb(185, 77, 27);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px;
+}
+.calcBody-memHistory .memory-side {
+  padding: 10px 10px 10px 25px;
+  flex-basis: 100%;
+}
+.calcBody-memHistory .memory-side .mem-value {
+  overflow: hidden;
+  color: rgb(120, 231, 16);
+}
+.calcBody-memHistory .history-side {
+  padding: 10px;
+  flex-basis: 350px;
+}
+.calcBody-memHistory .history-side .history-value {
+  max-width: 180px;
+  overflow: hidden;
+}
+
+.calcBody-btnField {
+  padding: 20px;
+}
+.calcBody-btnField .cell {
+  outline: none;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  line-height: 80px;
+  color: rgb(140, 155, 145);
+  font-size: 25px;
+  font-weight: 600;
+  background-color: inherit;
+}
+.calcBody-btnField .cell:hover {
+  color: rgb(123, 255, 0);
+}
+.calcBody-btnField .m__color {
+  color: rgb(185, 77, 27);
+  font-weight: 700;
+}
+.calcBody-btnField .number {
+  font-size: 40px;
+  font-weight: 500;
+  color: inherit;
+}
+.calcBody-btnField .back {
+  color: rgb(185, 77, 27);
+}
+.calcBody-btnField .sign,
+.calcBody-btnField .equal {
+  font-size: 40px;
+  color: rgb(255, 230, 0);
+}
+.calcBody-btnField .equal {
+  border-radius: 50%;
+  background-color: rgb(73, 45, 28);
+}
+.calcBody-btnField .equal:hover {
+  color: rgb(255, 255, 255);
+}
+.calcBody-btnField .del {
+  color: rgb(185, 77, 27);
+  font-weight: 500;
+  font-size: 35px;
+}

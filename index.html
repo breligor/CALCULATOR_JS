@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/src/style/css/style.css">
+    <link rel="stylesheet" title="theme" href="/src/style/css/dark.css">
+    <title>Calculator</title>
+</head>
+<body id="body" class="dark">
+    <main>
+        <div class="wrapper">
+            <div class="calcBody">
+                <div class="calcBody-display calc-body__item">
+                    <div class="themeSwitch">
+                        <button class="themeSwitch-btn" data-theme="dark" title="change color scheme">C</button>                       
+                    </div>                    
+                    <div class="display-window">
+                        <input class="displaySecond" type="text" >
+                        <input class="display" type="text">                        
+                    </div>
+                </div>
+                <div class="calcBody-memHistory calc-body__item">
+                    <div class="memory-side">
+                       <p>Memory:</p>
+                       <p class="mem-value">0</p>
+                    </div>                    
+                </div>
+                <div class="calcBody-btnField calc-body__item">
+                    <div class="function-btn">
+                        <button class="cell m__color" data-mem="MC">MC</button>
+                        <button class="cell" data-func="pow2">x²</button>
+                        <button class="cell" data-func="pow3">x³</button>
+                        <button class="cell m__color" data-mem="M+">M+</button>
+                        <button class="cell" data-operator="powXY">xʸ</button>
+                        <button class="cell" data-func="pow10X">10ˣ</button>
+                        <button class="cell m__color" data-mem="M-">M-</button>
+                        <button class="cell" data-func="root2">²√x</button>
+                        <button class="cell" data-func="root3">³√x</button>
+                        <button class="cell m__color" data-mem="MR">MR</button>
+                        <button class="cell" data-operator="rootY" value="x^1/y">ʸ√x</button>
+                        <button class="cell" data-func="div1X">1/x</button>
+                        <button class="cell m__color" data-mem="MS">MS</button>
+                        <button class="cell" data-func="fac">X!</button>
+                        <button class="cell back" data-key="Undo">BACK</button>                                               
+                    </div>
+                    <div class="number-btn">
+                        <button class="cell m__color" data-key="makeClear" id="AC-btn">AC</button>
+                        <button class="cell" data-key="makePercent">%</button>                        
+                        <button class="cell" data-key="makeMinusPlus">+/-</button>
+                        <button class="cell number" data-character="7" value="7">7</button>
+                        <button class="cell number" data-character="8" value="8">8</button>
+                        <button class="cell number" data-character="9" value="9">9</button>
+                        <button class="cell number" data-character="4" value="4">4</button>
+                        <button class="cell number" data-character="5" value="5">5</button>
+                        <button class="cell number" data-character="6" value="6">6</button>
+                        <button class="cell number" data-character="1" value="1">1</button>
+                        <button class="cell number" data-character="2" value="2">2</button>
+                        <button class="cell number" data-character="3" value="3">3</button>
+                        <button class="cell number" data-character="0" value="0">0</button>
+                        <button class="cell number" data-key="inputDot">.</button>
+                        <button class="cell del" data-key="makeBackspace">DEL</button>
+                    </div>
+                    <div class="sign-btn">
+                        <button class="cell sign" data-operator="add">+</button>
+                        <button class="cell sign sub" data-operator="sub">-</button>
+                        <button class="cell sign mul" data-operator="mul">x</button>
+                        <button class="cell sign" data-operator="div">÷</button>
+                        <button class="cell equal" data-key="makeEqual">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/src/scripts/index.js"></script>
+    <script src="/src/scripts/themeSwitch.js"></script>
+</body>
+</html>
