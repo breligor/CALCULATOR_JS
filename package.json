@@ -1,0 +1,54 @@
+{
+  "name": "calculator_js",
+  "version": "1.0.0",
+  "description": "Simple calculator with memory functions and history based on Command pattern",
+  "main": "index.js",
+  "scripts": {    
+    "build": "webpack",    
+    "precommit": "lint-staged",
+    "lint": "eslint",
+    "prettier": "prettier src -check",
+    "test": "jest",
+    "deploy": "gh-pages -d dist",
+    "husky-install": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/breligor/CALCULATOR_JS.git"
+  },
+  "author": "igor brel",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.19.6",
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^29.3.1",
+    "babel-loader": "^9.1.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.2",
+    "jest": "^29.3.1",    
+    "lint-staged": "^13.0.4",
+    "prettier": "^2.7.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "lint-staged": {
+    "*. {js}": [
+      "node_modules/.bin/eslint",
+      "prettier --write"      
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/breligor/CALCULATOR_JS/issues"
+  },
+  "homepage": "https://github.com/breligor/CALCULATOR_JS#readme"
+}
