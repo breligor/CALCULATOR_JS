@@ -1,14 +1,12 @@
 # CALCULATOR_JS
 # Simple calculator with memory functions and history based on Command pattern
 
-## [Deploy](later)
-
 ## How to run the app:
 
 1. Clone repo https://github.com/breligor/CALCULATOR_JS.git
 
 ```
-$git clone link
+git clone link
 ```
 
 2. Open the directory in code editor
