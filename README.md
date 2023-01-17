@@ -20,6 +20,7 @@ $git clone link
 - `npm run build` builds the app for production to the `dist` folder
 
 ## Folders structure
+```
  ┣ 📜index.html                   # Calculator template
 📦src                             # Contains all logic of the project
  ┣ 📂style                        # Holds .css files with app styles
