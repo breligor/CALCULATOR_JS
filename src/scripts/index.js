@@ -74,11 +74,6 @@ export default class CalculatorUI {
 
     // dot input handler
     inputDot() {
-        // dot after equal - output '0.'
-        if (this.equallyInputted === true) {
-            DISPLAY.value = '0.';
-            this.inputUpdated = true;
-        }
         // only one dot in number
         if (DISPLAY.value.indexOf('.') === -1) {
             DISPLAY.value += '.';
@@ -109,6 +104,7 @@ export default class CalculatorUI {
         // if the operator is entered for the first time - remember it and add it to the calculator register
         // (f.e.: ControlUnit -> commands[ 0: Add {receiver: ArithmeticUnit, operand: 2, operator: '+']} )
         if (this.currentOperator === null) {
+            this.calculator.clean()
             this.calculator.add(parseFloat(DISPLAY.value));
             this.firstOperandInputted = true;
             this.currentOperator = func;
