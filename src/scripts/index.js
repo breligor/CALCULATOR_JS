@@ -153,7 +153,7 @@ export default class CalculatorUI {
             );
             this.currentOperator = operator;
             this.inputUpdated = false;
-
+           
             return;
         }
         // leave only the last entered operator
@@ -180,7 +180,7 @@ export default class CalculatorUI {
             DISPLAY.value = this.calculator[this.currentOperator](
                 parseFloat(DISPLAY.value)
             );
-            SECOND_DISPLAY.value = DISPLAY.value;
+            SECOND_DISPLAY.value = DISPLAY.value;        
             this.equallyInputted = true;
             this.setDefaultFlags(); // clean flags
         } else {
@@ -188,7 +188,7 @@ export default class CalculatorUI {
             if (!this.firstOperandInputted) {
                 DISPLAY.value = this.calculator.repeatLastCommand();
                 SECOND_DISPLAY.value = DISPLAY.value;
-                this.inputUpdated = false;
+                this.inputUpdated = false;                       
             } else {
                 return false;
             }
