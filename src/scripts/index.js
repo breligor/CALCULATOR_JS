@@ -74,9 +74,14 @@ export default class CalculatorUI {
 
     // dot input handler
     inputDot() {
+        // add 0 to empty second display when the dot has inputed
+        if( SECOND_DISPLAY.value === '') {
+            SECOND_DISPLAY.value = '0';
+        }
         // only one dot in number
         if (DISPLAY.value.indexOf('.') === -1) {
             DISPLAY.value += '.';
+            SECOND_DISPLAY.value += '.';
             this.inputUpdated = true;
         } else {
             return false;
