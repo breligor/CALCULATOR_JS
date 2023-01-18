@@ -109,24 +109,19 @@ export default class CalculatorUI {
     singleOperations(func) {
         // if the operator is entered for the first time - remember it and add it to the calculator register
         // (f.e.: ControlUnit -> commands[ 0: Add {receiver: ArithmeticUnit, operand: 2, operator: '+']} )
-        if (this.currentOperator === null) {
-            this.calculator.clean()
-            this.calculator.add(parseFloat(DISPLAY.value));
-            this.firstOperandInputted = true;
+        
+            this.calculator.clean();
+            this.calculator.add(parseFloat(DISPLAY.value));            
             this.currentOperator = func;
             DISPLAY.value = this.calculator[this.currentOperator](
                 parseFloat(DISPLAY.value)
             );
             SECOND_DISPLAY.value = DISPLAY.value;
+            this.currentOperator = null;
+            this.calculator.clean();
 
             return;
         }
-        // further calculation when the same key is pressed again with an already existing value
-        if (this.currentOperator !== null && this.firstOperandInputted) {
-            DISPLAY.value = this.calculator.repeatLastCommand();
-            SECOND_DISPLAY.value = DISPLAY.value;
-        }
-    }
 
     // 2 operands
     doubleOperations(operator) {
