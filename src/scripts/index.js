@@ -49,9 +49,9 @@ export default class CalculatorUI {
     }
 
     // memory operations through sessionStorage
-    memoryOperations(memory) {
+    memoryOperations(memory) {        
         SwitchMem(memory);
-        this.inputUpdated = true; // MR value can be the second operand in operation
+        this.inputUpdated = true;  // MR value can be the second operand in operation
     }
 
     // DEL btn to delete last symbol
