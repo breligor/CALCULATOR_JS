@@ -91,7 +91,8 @@ export default class CalculatorUI {
     // screen output
     inputChar(char) {
         if (this.inputUpdated === false) {
-            if (SECOND_DISPLAY.value == 0) {
+            // second display are clearing after arithmetic operation while entering a new character  
+            if (SECOND_DISPLAY.value !== 0 && this.equallyInputted == true) {
                 SECOND_DISPLAY.value = '';
             }
             DISPLAY.value = char; // first input
