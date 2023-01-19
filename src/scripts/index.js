@@ -49,9 +49,9 @@ export default class CalculatorUI {
     }
 
     // memory operations through sessionStorage
-    memoryOperations(memory) {
-        this.setDefaultFlags();
+    memoryOperations(memory) {        
         SwitchMem(memory);
+        this.inputUpdated = true;  // MR value can be the second operand in operation
     }
 
     // DEL btn to delete last symbol
@@ -74,9 +74,14 @@ export default class CalculatorUI {
 
     // dot input handler
     inputDot() {
+        // add 0 to empty second display when the dot has inputed
+        if( SECOND_DISPLAY.value === '') {
+            SECOND_DISPLAY.value = '0';
+        }
         // only one dot in number
         if (DISPLAY.value.indexOf('.') === -1) {
             DISPLAY.value += '.';
+            SECOND_DISPLAY.value += '.';
             this.inputUpdated = true;
         } else {
             return false;
@@ -86,12 +91,15 @@ export default class CalculatorUI {
     // screen output
     inputChar(char) {
         if (this.inputUpdated === false) {
-            if (SECOND_DISPLAY.value == 0) {
+            // second display are clearing after arithmetic operation while entering a new character  
+            if (SECOND_DISPLAY.value !== 0 && this.equallyInputted == true) {
                 SECOND_DISPLAY.value = '';
             }
             DISPLAY.value = char; // first input
             SECOND_DISPLAY.value += char;
             this.inputUpdated = true;
+
+            return;
         } else {
             // second input
             DISPLAY.value += char;
@@ -103,24 +111,19 @@ export default class CalculatorUI {
     singleOperations(func) {
         // if the operator is entered for the first time - remember it and add it to the calculator register
         // (f.e.: ControlUnit -> commands[ 0: Add {receiver: ArithmeticUnit, operand: 2, operator: '+']} )
-        if (this.currentOperator === null) {
-            this.calculator.clean()
-            this.calculator.add(parseFloat(DISPLAY.value));
-            this.firstOperandInputted = true;
+        
+            this.calculator.clean();
+            this.calculator.add(parseFloat(DISPLAY.value));            
             this.currentOperator = func;
             DISPLAY.value = this.calculator[this.currentOperator](
                 parseFloat(DISPLAY.value)
             );
             SECOND_DISPLAY.value = DISPLAY.value;
+            this.currentOperator = null;
+            this.calculator.clean();
 
             return;
         }
-        // further calculation when the same key is pressed again with an already existing value
-        if (this.currentOperator !== null && this.firstOperandInputted) {
-            DISPLAY.value = this.calculator.repeatLastCommand();
-            SECOND_DISPLAY.value = DISPLAY.value;
-        }
-    }
 
     // 2 operands
     doubleOperations(operator) {
@@ -180,7 +183,7 @@ export default class CalculatorUI {
             DISPLAY.value = this.calculator[this.currentOperator](
                 parseFloat(DISPLAY.value)
             );
-            SECOND_DISPLAY.value = DISPLAY.value;        
+            SECOND_DISPLAY.value = `${SECOND_DISPLAY.value} = ${DISPLAY.value}`;    // add "=" to second display    
             this.equallyInputted = true;
             this.setDefaultFlags(); // clean flags
         } else {
@@ -188,7 +191,8 @@ export default class CalculatorUI {
             if (!this.firstOperandInputted) {
                 DISPLAY.value = this.calculator.repeatLastCommand();
                 SECOND_DISPLAY.value = DISPLAY.value;
-                this.inputUpdated = false;                       
+                this.inputUpdated = true;
+                this.equallyInputted = true;                       
             } else {
                 return false;
             }
