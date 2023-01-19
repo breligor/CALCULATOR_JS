@@ -181,7 +181,7 @@ export default class CalculatorUI {
             DISPLAY.value = this.calculator[this.currentOperator](
                 parseFloat(DISPLAY.value)
             );
-            SECOND_DISPLAY.value = DISPLAY.value;        
+            SECOND_DISPLAY.value = `${SECOND_DISPLAY.value} = ${DISPLAY.value}`;    // add "=" to second display    
             this.equallyInputted = true;
             this.setDefaultFlags(); // clean flags
         } else {
@@ -189,7 +189,8 @@ export default class CalculatorUI {
             if (!this.firstOperandInputted) {
                 DISPLAY.value = this.calculator.repeatLastCommand();
                 SECOND_DISPLAY.value = DISPLAY.value;
-                this.inputUpdated = false;                       
+                this.inputUpdated = true;
+                this.equallyInputted = true;                       
             } else {
                 return false;
             }
