@@ -98,6 +98,8 @@ export default class CalculatorUI {
             DISPLAY.value = char; // first input
             SECOND_DISPLAY.value += char;
             this.inputUpdated = true;
+
+            return;
         } else {
             // second input
             DISPLAY.value += char;
